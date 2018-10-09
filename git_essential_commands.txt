@@ -29,13 +29,13 @@ Commit the files
 git commit -m "Debian 9.5 Cinnamon dot files, wallpapers, icons"
 
 Push the files to github
-git push
+git push -u origin master
 
 In case you want to remove a file from the github repo.
-git rm --cached vim-8.0_20171210-1_amd64.deb 
+This way, you can keep the file in the directory, but remove it from the github repository.
+git rm --cached yandex.deb 
 
-
-Add again
+Then run the add Command.
 git add *
 
 Check status 
@@ -45,5 +45,5 @@ Commit again.
 git commit -m "Compiled Vim 8.0 from source"
 
 Push again.
-git push origin master 
+git push -u origin master 
 
