@@ -71,7 +71,7 @@ set showmode
 set showcmd
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Enable mouse in "a"ll aspects
-set mouse=a
+set mouse=a                      
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Set history and undolevels
 set history=1000
@@ -119,16 +119,19 @@ setglobal fileencoding=utf-8
 set foldmethod=marker
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""Set swapfiles directory
-"set directory=%HOMEPATH%\\vim\\vimswap//
-""Set backup files directory
-"set backupdir=%HOMEPATH%\\vim\\vimbkup//
-""Set undo directory
-"set undodir=%HOMEPATH%\\vim\\vimundo//
-""Note - You have to create the directories first. Vim wont create them for you.
+"Note-You have to create the directories first.
+"Vim wont create them for you.
 "Otherwise, you can just set vim to NOT have any of these
-set nobackup
-set noswapfile
-set noundofile
+"set nobackup
+"set noswapfile
+"set noundofile
+"For Linux, I have created a $home/.vimdirs directory
+"Setting swap files directory
+set directory=$HOME/.vimdirs/vimswap
+"Setting backup files directory
+set backupdir=$HOME/.vimdirs/vimbkup
+"Setting undo directory
+set undodir=$HOME/.vimdirs/vimundo
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Set command to clear registers.
@@ -156,11 +159,12 @@ set listchars=tab:>>,eol:+,nbsp:&
 set t_Co=512
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set background 
-set background=light
+"set background=light
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set colorscheme
-colorscheme github
-let g:rehash256=1
+"colorscheme github
+"let g:rehash256=1
+"let g:rehash512=1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Always show statusline
