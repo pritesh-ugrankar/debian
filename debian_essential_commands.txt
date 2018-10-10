@@ -1,4 +1,3 @@
-
 #Add pritesh to sudo group
 sudo adduser pritesh sudo
 
@@ -7,6 +6,10 @@ sudo apt install git
 
 #Install gVim
 sudo apt install vim-gnome
+
+#Create the following directories. These are for vim swap/backup/undo directories
+
+mkdir -p $HOME/.vimdirs/vimbkup $HOME/.vimdirs/vimswap $HOME/.vimdirs/vimundo 
 
 #Install vim plugins from your repository
 git clone https://github.com/pritesh-ugrankar/.vim 
