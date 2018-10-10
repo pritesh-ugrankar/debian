@@ -1,6 +1,9 @@
 #Add pritesh to sudo group
 sudo adduser pritesh sudo
 
+#Install development tools
+sudo apt install build-essential
+
 #Install git
 sudo apt install git
 
