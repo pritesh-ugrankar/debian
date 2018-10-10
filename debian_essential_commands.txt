@@ -1,0 +1,19 @@
+
+#Add pritesh to sudo group
+sudo adduser pritesh sudo
+
+#Install git
+sudo apt install git
+
+#Install gVim
+sudo apt install vim-gnome
+
+#Install vim plugins from your repository
+git clone https://github.com/pritesh-ugrankar/.vim 
+
+#Add Sensors
+sudo apt install lm-sensors
+
+#Install TLP
+sudo apt install tlp tlp-rdw tp-smapi-dkms acpi-call-dkms 
+sudo tlp start
