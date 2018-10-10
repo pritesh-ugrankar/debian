@@ -1,25 +1,91 @@
-#Add pritesh to sudo group
+Add pritesh to sudo group
 sudo adduser pritesh sudo
 
-#Install development tools
+Install development tools
 sudo apt install build-essential
 
-#Install git
+Install git
 sudo apt install git
 
-#Install gVim
+Install gVim
 sudo apt install vim-gnome
 
-#Create the following directories. These are for vim swap/backup/undo directories
+Create the following directories. These are for vim swap/backup/undo directories
 
 mkdir -p $HOME/.vimdirs/vimbkup $HOME/.vimdirs/vimswap $HOME/.vimdirs/vimundo 
 
-#Install vim plugins from your repository
+Install vim plugins from your repository
 git clone https://github.com/pritesh-ugrankar/.vim 
 
-#Add Sensors
+Add Sensors
 sudo apt install lm-sensors
 
-#Install TLP
+Install TLP
 sudo apt install tlp tlp-rdw tp-smapi-dkms acpi-call-dkms 
 sudo tlp start
+
+Killing processes.
+*******USE THIS WITH EXTREME CAUTION.*******
+Suppose Cinnamon session hangs.
+press CTRL+ALT+F2 to go to command prompt.
+Login with the user credentials
+###########################################################################
+Option 1 - The ps -A command, The pidof command, and the kill command
+###########################################################################
+Use the ps -A command and grep for "cinnamon"
+:~$ ps -A | grep cinnamon
+ 6572 ?        00:00:00 cinnamon-sessio
+ 6658 ?        00:00:00 cinnamon-settin
+ 6685 ?        00:00:00 cinnamon-launch
+ 6688 ?        00:00:25 cinnamon
+ 6701 ?        00:00:00 cinnamon-killer
+ 6741 ?        00:00:00 cinnamon-screen
+:~$ 
+
+
+:~$ pidof cinnamon-session
+6572
+
+The table below shows which signals are mostly used.
+
+Signal Name	Signal Value			Behaviour
+SIGHUP		      1				Hangup
+SIGTERM		      15			Terminate
+SIGKILL		      9				Kill Signal
+
+Try killing with signal 15 like so:
+:~$ kill -15 6572
+This is same as:
+:~$ kill -SIGTERM 6572
+More than one process can also be killed as shown below:
+:~$ kill -15 6572 6658 6685 6688 6701 6741
+This is same as:
+:~$ kill -SIGTERM 6572 6658 6685 6688 6701 6741
+
+If that does not work, try the following:
+
+:~$ kill -9 6572
+This is same as:
+:~$ kill -SIGKILL 6572
+
+More than one process can also be killed as shown below:
+:~$ kill -9 6572 6658 6685 6688 6701 6741
+This is same as:
+:~$ kill -SIGKILL 6572 6658 6685 6688 6701 6741
+
+
+###########################################################################
+OPTION 2 - The pkill command
+###########################################################################
+The pkill command can also be used.
+
+:~$ pkill cinnamon-session
+
+###########################################################################
+OPTION 3 - The killall command[DO NOT USE ON UNIX]
+###########################################################################
+Use killall command to kill all cinnamon related processes[DO NOT USE ON UNIX]
+
+:~$ killall cinnamon
+
+
