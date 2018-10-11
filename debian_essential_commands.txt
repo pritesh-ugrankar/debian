@@ -1,11 +1,13 @@
 Add pritesh to sudo group
 sudo adduser pritesh sudo
 
-ENSURE THAT THE etc_apt_sources.list.previous.installation file content is copied to /etc/apt/sources.list
+ENSURE THAT THE etc_apt_sources.list file content is copied to /etc/apt/sources.list
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.orig
-sudo cp ~/debian/etc_apt_sources.list.previous.installation /etc/apt/sources.list
+sudo cp ~/debian/etc_apt_sources.list /etc/apt/sources.list
 Update and upgrade
 sudo apt update && sudo apt upgrade
+
+Follow the kernel update guide. Note how automatically the new kernel gets installed after adding backports repo.
 
 Install development tools
 sudo apt install build-essential
