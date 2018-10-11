@@ -1,6 +1,12 @@
 Add pritesh to sudo group
 sudo adduser pritesh sudo
 
+ENSURE THAT THE etc_apt_sources.list.previous.installation file content is copied to /etc/apt/sources.list
+sudo mv /etc/apt/sources.list /etc/apt/sources.list.orig
+sudo cp ~/debian/etc_apt_sources.list.previous.installation /etc/apt/sources.list
+Update and upgrade
+sudo apt update && sudo apt upgrade
+
 Install development tools
 sudo apt install build-essential
 
