@@ -46,6 +46,21 @@ Install TLP
 sudo apt install tlp tlp-rdw tp-smapi-dkms acpi-call-dkms 
 sudo tlp start
 
+Change the GRUB Bootsplash screen.
+Copy the 102370-1.png file to the correct dir as shown.
+sudo cp ~/debian/102370-1.png /usr/share/images/desktop-base/
+
+Move the file as desktop-grub.png
+sudo mv 102370-1.png desktop-grub.png
+
+Change the Cinnamon Login Background.
+First, save the original login-background.svg with a different name
+sudo mv /usr/share/images/desktop-base/login-background.svg login-background.svg.orig
+
+Then, copy the svg from debian directory as shown below.
+sudo cp /home/pritesh/debian/login-background.svg /usr/share/images/desktop-base/
+
+
 Killing processes.
 *******USE THIS WITH EXTREME CAUTION.*******
 Suppose Cinnamon session hangs.
